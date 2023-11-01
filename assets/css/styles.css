@@ -1,0 +1,27 @@
+.table{
+    max-width: 100%;
+    cursor: context-menu;
+    float: left;
+    padding: 20px;
+}
+
+.box{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+    font-family: Arial;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.nbox{
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+    font-size: 16px;
+    font-family: Arial;
+    border-collapse: collapse;
+    border: 1px solid transparent;
+}
