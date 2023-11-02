@@ -3,7 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="assets/css/styles.css">
-<title>TTS</title>
+  <link rel="icon" href="assets\img\Page Icon.png" type="image/png">
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<title>Crossword</title>
 </head>
 <body>
   <table class="table">
@@ -65,12 +69,13 @@
 
   </table>
 
+  <div id="ttsApp"></div>
+
   <input type="text" id="ans" />
   <button id="submitBtn" onclick="submit(ans)">Submit</button>
   <p id="check"></p>
-  <p id="finish"></p>
-
-
+  <p id="finish" style="text-align: left;"></p>
+  
   <script>
     var ans1 = 0;
     var ans2 = 0;
@@ -170,42 +175,36 @@
     });
 
   </script>
-</body>
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/jsx">
-    const halaman = document.getElementById('app');
-    const root = ReactDOM.createRoot(halaman);
-    function Tombol(props) {
-        return(
-            <button style={{background:props.background,color:props.warna}}>ini adalah {props.isi}</button>
-        );
+
+  <script type="text/babel">
+    const halaman = document.getElementById('ttsApp');
+
+    function Questions() {
+      return (
+        <div>
+          <p>Mendatar</p>
+          <p>1. Tom (from the cartoon Tom & Jerry) is a ___.</p>
+          <p>2. A ___ is a woman who vows to dedicate her life to religious service and contemplation, 
+            typically living under vows of poverty, chastity, and obedience in the enclosure of a monastery or convent.</p>
+          <p>7. ______ States of America.</p>
+          <p>8. When you visit Rome, you must ___ the Colosseum, an iconic historical landmark that leaves a lasting impression.</p>
+
+          <p>Menurun</p>
+          <p>3. Maize is also known as ____.</p>
+          <p>4. In chess moving is compulsory and a player may not skip a ____.</p>
+          <p>5. Slow but steady ____ the race.</p>
+          <p>6. She arrived ____ just in time to catch the sunset.</p>
+        </div>
+      );
     }
 
-    function Gambar() {
-        return(
-            <>
-            <img src="https://eknows.uinsgd.ac.id/pluginfile.php/1/theme_academi/logo/1671468284/Logo_eknows_UIN.png" width="100"/>
-            </>
-        );
-    }
+    ReactDOM.render(
+      <div>
+        <Questions />
+      </div>,
+      halaman
+    );
 
-    function Tombol2(props) {
-        return(
-            <>
-                <button background={props.warna}>ini adalah {props.isi}</button>
-            </>
-        );
-    }
-    
-    root.render(
-        <>
-            <h1> Selamat datang </h1>
-            <Tombol isi="Tombol 1" background="green" warna="white"/>
-            <Tombol isi="Tombol 2" background="red" warna="white"/>
-            <Gambar/>
-        </>
-    );                  
   </script>
+</body>
 </html>
