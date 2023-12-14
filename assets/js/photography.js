@@ -1,7 +1,6 @@
 (function($) { "use strict";
         
     //Page cursors
-
     document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
         t.style.left = n.clientX + "px", 
         t.style.top = n.clientY + "px", 
@@ -26,10 +25,8 @@
     function o(t) {
         t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
     }
-
     
     //About page
-    
     $(".about-text").on('click', function () {
         $("body").addClass("about-on");
     });
@@ -37,39 +34,31 @@
         $("body").removeClass("about-on");
     });
 
-    
     //Contact page
-    
     $(".contact-text").on('click', function () {
         $("body").addClass("contact-on");
     });
     $(".contact-close").on('click', function () {
         $("body").removeClass("contact-on");
     });
-
     
     //Travel portfolio page
-    
     $(".travel").on('click', function () {
         $("body").addClass("travel-on");
     });
     $(".travel-close").on('click', function () {
         $("body").removeClass("travel-on");
     });
-
     
     //Wildlife portfolio page
-    
     $(".wildlife").on('click', function () {
         $("body").addClass("wildlife-on");
     });
     $(".wildlife-close").on('click', function () {
         $("body").removeClass("wildlife-on");
     });
-
     
     //Nature portfolio page
-    
     $(".nature").on('click', function () {
         $("body").addClass("nature-on");
     });
@@ -77,5 +66,4 @@
         $("body").removeClass("nature-on");
     });
 
-    
 })(jQuery);
