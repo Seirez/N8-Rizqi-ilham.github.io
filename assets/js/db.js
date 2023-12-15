@@ -16,25 +16,56 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 
 // Check if itemsContainer exists
-const itemsContainer = document.getElementById('items-container');
-if (!itemsContainer) {
- console.error("Element with id 'items-container' not found");
-} else {
+const itemsContainerAnimals = document.getElementById('items-container-animals');
+const itemsContainerMotorcycle = document.getElementById('items-container-motorcycle');
+const itemsContainerScenery = document.getElementById('items-container-scenery');
+
 // Get a reference to the "items" collection
-const itemsCollection = collection(db, 'imgs');
+const itemsCollectionAnimals = collection(db, 'imgs-animals');
+const itemsCollectionMotorcycle = collection(db, 'imgs-motorcycle');
+const itemsCollectionScenery = collection(db, 'imgs-scenery');
 
 // Retrieve multiple items from Firestore
-getDocs(itemsCollection).then((querySnapshot) => {
+getDocs(itemsCollectionAnimals).then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
 
       // Display each item in HTML
       const itemElement = document.createElement('div');
       itemElement.setAttribute('class', 'col-md-6 col-lg-12');
-      itemElement.innerHTML = `<img src="${data.image}" alt="">`;
-      itemsContainer.appendChild(itemElement);
+      itemElement.innerHTML = `<img src="${data.img}" alt="">`;
+      itemsContainerAnimals.appendChild(itemElement);
     });
  }).catch((error) => {
     console.error('Error getting documents:', error);
  });
-}
+
+// Retrieve multiple items from Firestore
+getDocs(itemsCollectionMotorcycle).then((querySnapshot) => {
+   querySnapshot.forEach((doc) => {
+     const data = doc.data();
+
+     // Display each item in HTML
+     const itemElement = document.createElement('div');
+     itemElement.setAttribute('class', 'col-md-6 col-lg-12');
+     itemElement.innerHTML = `<img src="${data.img}" alt="">`;
+     itemsContainerMotorcycle.appendChild(itemElement);
+   });
+}).catch((error) => {
+   console.error('Error getting documents:', error);
+});
+
+// Retrieve multiple items from Firestore
+getDocs(itemsCollectionScenery).then((querySnapshot) => {
+   querySnapshot.forEach((doc) => {
+     const data = doc.data();
+
+     // Display each item in HTML
+     const itemElement = document.createElement('div');
+     itemElement.setAttribute('class', 'col-md-6 col-lg-12');
+     itemElement.innerHTML = `<img src="${data.img}" alt="">`;
+     itemsContainerScenery.appendChild(itemElement);
+   });
+}).catch((error) => {
+   console.error('Error getting documents:', error);
+});

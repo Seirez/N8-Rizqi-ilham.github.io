@@ -42,28 +42,28 @@
         $("body").removeClass("contact-on");
     });
     
-    //Travel portfolio page
-    $(".travel").on('click', function () {
-        $("body").addClass("travel-on");
+    //animals portfolio page
+    $(".animals").on('click', function () {
+        $("body").addClass("animals-on");
     });
-    $(".travel-close").on('click', function () {
-        $("body").removeClass("travel-on");
+    $(".animals-close").on('click', function () {
+        $("body").removeClass("animals-on");
+    });
+
+    //motorcycle portfolio page
+    $(".motorcycle").on('click', function () {
+        $("body").addClass("motorcycle-on");
+    });
+    $(".motorcycle-close").on('click', function () {
+        $("body").removeClass("motorcycle-on");
     });
     
-    //Wildlife portfolio page
-    $(".wildlife").on('click', function () {
-        $("body").addClass("wildlife-on");
+    //animals portfolio page
+    $(".scenery").on('click', function () {
+        $("body").addClass("scenery-on");
     });
-    $(".wildlife-close").on('click', function () {
-        $("body").removeClass("wildlife-on");
-    });
-    
-    //Nature portfolio page
-    $(".nature").on('click', function () {
-        $("body").addClass("nature-on");
-    });
-    $(".nature-close").on('click', function () {
-        $("body").removeClass("nature-on");
+    $(".scenery-close").on('click', function () {
+        $("body").removeClass("scenery-on");
     });
 
 })(jQuery);
